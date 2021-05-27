@@ -15,13 +15,13 @@ pipeline {
         }
         stage('docker hub login') {
             steps {
-                sh 'docker login -u mkumar012 -p manish012 '
+                sh 'docker login -u manish012 -p manish012 '
             }
         }
         stage('image push') {
             steps {
-            sh 'docker tag apache2 mkumar012/apacheweb:apache'
-            sh 'docker push mkumar012/apacheweb:apache'
+            sh 'docker tag apache2 manish012/apacheweb:apache'
+            sh 'docker push manish012/apacheweb:apache'
             }
         }
     }
