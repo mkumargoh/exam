@@ -19,8 +19,10 @@ pipeline {
             }
         }
         stage('image push') {
+            steps {
             sh 'docker tag apache2 mkumar012/apacheweb:apache'
             sh 'docker push mkumar012/apacheweb:apache'
+            }
         }
     }
 }
