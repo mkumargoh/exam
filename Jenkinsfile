@@ -20,8 +20,8 @@ pipeline {
         }
         stage('image push') {
             steps {
-            sh 'docker tag apache2 manish012/apacheweb:apache'
-            sh 'docker push manish012/apacheweb:apache'
+            sh 'docker tag apache2 manish012/apacheweb:apache1'
+            sh 'docker push manish012/apacheweb:apache1'
             }
         }
     }
