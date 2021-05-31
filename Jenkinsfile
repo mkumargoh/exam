@@ -7,7 +7,7 @@ pipeline {
     agent any
 
     stages {
-        stage('image check') {
+               stage('image check') {
             steps {
                 sh "docker images"
             }
@@ -33,10 +33,12 @@ pipeline {
         stage('Deployment'){
         steps {
             script {
-             // move the new changed
+                // move the new changed
              //sh 'mv index.html /var/www/html'
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
+            }
+             
     }
 }
