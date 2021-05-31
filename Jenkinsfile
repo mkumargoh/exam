@@ -15,7 +15,8 @@ pipeline {
         }
         stage('docker hub login') {
             steps {
-                sh 'docker login -u manish012 -p manish012 '
+               // sh 'docker login -u manish012 -p manish012 '
+                docker.withRegistry('https://hub.docker.com/repository/docker/manish012/apacheweb')
             }
         }
         stage('image push') {
