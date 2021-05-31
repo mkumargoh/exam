@@ -5,7 +5,6 @@ remote.port = 22
 remote.allowAnyHosts = true
 pipeline {
     agent any
-
     stages {
                stage('image check') {
             steps {
@@ -38,7 +37,6 @@ pipeline {
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
-            }
-             
+        }
     }
 }
