@@ -21,18 +21,6 @@ spec:
     matchLabels:
       type: front-end
 
-// service
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  type: NodePort
-  ports:
-   - targetPort: 80
-     port: 80
-     nodePort: 30000
 
-  selector:
     app: pod-deployment  
     type: front-end
