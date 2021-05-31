@@ -38,6 +38,5 @@ pipeline {
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
-             
     }
 }
