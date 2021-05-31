@@ -1,3 +1,8 @@
+def remote = [:]
+remote.name = 'manish'
+remote.host = '192.168.1.4'
+remote.port = 22
+remote.allowAnyHosts = true
 pipeline {
     agent any
 
@@ -25,5 +30,14 @@ pipeline {
             sh 'docker push manish012/apacheweb:apache1'
             }
         }
+        stage('Deployment'){
+        steps {
+            script {
+             // move the new changed
+             //sh 'mv index.html /var/www/html'
+             withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
+             remote.user = user
+             remote.password = pass
+             sshPut remote: remote, from: "index.html", into: "/var/www/html"
     }
 }
