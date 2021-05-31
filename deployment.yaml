@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx-controller
-          image: apache1
+          image: manish012/apacheweb:apache1
   replicas: 3
   selector:
     matchLabels:
