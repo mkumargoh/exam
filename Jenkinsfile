@@ -35,6 +35,8 @@ pipeline {
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
+             sh 'kubectl apply -f deployment.yaml'
+             sh 'kubectl apply -f service.yaml'
              }
             }
         }
